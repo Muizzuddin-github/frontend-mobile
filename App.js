@@ -4,10 +4,10 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // screens
 import Home from './src/screens/Home';
 import Login from './src/screens/Login';
+import DetilResep from './src/screens/DetilResep';
 
 const RootStack = createNativeStackNavigator();
 const MainStack = createNativeStackNavigator();
-
 
 const MainStackScreen = () => {
   return(
@@ -15,9 +15,16 @@ const MainStackScreen = () => {
       <MainStack.Screen name='Home' component={Home} 
       options={{
         headerStyle : {
-          backgroundColor : '#fdba74'
+          backgroundColor : '#e8772e'
         },
-        
+        headerTintColor : '#ffff',
+      }}/>
+      <MainStack.Screen name='DetilResep' component={DetilResep} 
+      options={{
+        headerStyle : {
+          backgroundColor : '#e8772e'
+        },
+        headerTintColor : '#ffff',
       }}/>
     </MainStack.Navigator>
   )
