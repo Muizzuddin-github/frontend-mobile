@@ -1,6 +1,6 @@
 import { SafeAreaView, View, Text,Button } from 'react-native';
 
-const Login = ({ navigation }) => {
+const Admin = ({ navigation }) => {
     return(
         <SafeAreaView>
             <View className="container p-5 bg-white h-screen flex-col ">
@@ -11,4 +11,4 @@ const Login = ({ navigation }) => {
     )
 }
 
-export default Login
+export default Admin
