@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './src/screens/Home';
 import Login from './src/screens/Login';
 import DetilResep from './src/screens/DetilResep';
+import AddMenu from './src/screens/AddMenu';
 
 const RootStack = createNativeStackNavigator();
 const MainStack = createNativeStackNavigator();
@@ -20,6 +21,13 @@ const MainStackScreen = () => {
         headerTintColor : '#ffff',
       }}/>
       <MainStack.Screen name='DetilResep' component={DetilResep} 
+      options={{
+        headerStyle : {
+          backgroundColor : '#e8772e'
+        },
+        headerTintColor : '#ffff',
+      }}/>
+      <MainStack.Screen name='Tambah Resep' component={AddMenu} 
       options={{
         headerStyle : {
           backgroundColor : '#e8772e'
