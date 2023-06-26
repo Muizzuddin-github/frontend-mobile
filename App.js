@@ -42,7 +42,7 @@ function App() {
   return (
     <>
       <NavigationContainer>
-        <RootStack.Navigator mode='Login'>
+        <RootStack.Navigator mode='Login' initialRouteName='Login'>
           <RootStack.Screen name='Main' component={MainStackScreen}
           options={{ headerShown : false }}
           />

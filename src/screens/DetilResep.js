@@ -5,15 +5,6 @@ const DetilResep = ({ route,navigation }) => {
 
   const selectedResep = route.params.selectedResep;
 
-  const [judul, setJudul] = useState("");
-  const [bahan, setBahan] = useState(["nasi", "sajiku nasi goreng", "appapa"]);
-  const [proses, setProses] = useState([
-    "masukkan nasi diwajan",
-    "tabur bumbu sajiku nasi goreng",
-    "aduk sampai rata",
-    "tunggu hingga matang",
-  ]);
-
   useLayoutEffect(() => {
     navigation.setOptions({
       title : selectedResep.judul
