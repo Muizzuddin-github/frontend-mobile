@@ -58,6 +58,16 @@ const KontenHome = () => {
         }
     };
 
+    const handleDelete = async (id) => {
+        const response = await axios.delete(`https://backend-project-mobile.vercel.app/resep/${id}`);
+
+        if(response.data.status == 'OK'){
+            alert("Data berhasil dihapus");
+        } else{
+            alert(`Terjadi Kesalahan! \n error : ${response.data.message}`);
+        }
+    }
+
     return(
         <>
             {dataResep.map((data,idx) => {
@@ -73,7 +83,7 @@ const KontenHome = () => {
                             onLongPress={() => {showMenuByIdx(idx)}}
                         >
                             <View className="relative flex-row rounded-md bg-white">
-                                <Image source={require("../../assets/carbonara.jpeg")} className={`mr-3 w-24 h-full ${isShow[idx]? 'rounded-tl-md' : 'rounded-l-md'}`} />
+                                <Image source={{ uri : data.foto }} className={`mr-3 w-24 h-full ${isShow[idx]? 'rounded-tl-md' : 'rounded-l-md'}`} />
                                 <View className="py-2 flex-1">
                                     <Text className='font-semibold text-lg'>{data.judul}</Text>
                                     <Text className='text-xs'>{`\u2022 ${data.bahan[0]}`}</Text>
@@ -94,7 +104,8 @@ const KontenHome = () => {
                                 </TouchableOpacity>
                             </View>
                             <View className='my-2'>
-                            <TouchableOpacity className="bg-red-500 p-2 rounded-md">
+                            <TouchableOpacity className="bg-red-500 p-2 rounded-md"
+                            onPress={() => {handleDelete(data._id)}}>
                                 <Text className="text-center text-white text-base font-semibold">
                                     HAPUS
                                 </Text>
