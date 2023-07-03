@@ -15,8 +15,11 @@ import {
 } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import axios from "axios";
+import { useNavigation } from "@react-navigation/native";
 
 const AddMenu = () => {
+  const navigation = useNavigation();
+
   useEffect(() => {
     LogBox.ignoreLogs([
       'Key "cancelled" in the image picker result is deprecated and will be removed in SDK 48, use "canceled" instead',
@@ -91,7 +94,12 @@ const AddMenu = () => {
         proses: inProses,
       });
       console.log(foto)
-      Alert.alert(`Resep ${judul} Berhasil Ditambahkan`);
+      Alert.alert('',`Resep ${judul} Berhasil Ditambahkan`, [
+        {
+          text : 'OK',
+          onPress : () => {navigation.replace("Main")}
+        }
+      ]);
     } catch (error) {
       console.log(error.message);
     }
