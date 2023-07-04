@@ -18,7 +18,7 @@ const DetilResep = ({ route,navigation }) => {
           <View>
             <Image
               className="w-60 h-80 bg-center rounded m-auto"
-              source={{ uri: "https://iili.io/HPf8PEl.md.jpg" }}
+              source={{ uri: selectedResep.foto }}
             />
           </View>
 

@@ -21,19 +21,17 @@ const Home = ({ navigation }) => {
     
     return(
         <SafeAreaView>
-            <ScrollView>
-                <View className="relative container py-5 px-5 h-screen flex-col bg-orange-50">
-                    <KontenHome />
-                </View>
+            <ScrollView className="relative h-full py-5 px-5 flex-col bg-orange-50">
+                <KontenHome />
             </ScrollView>
-                {/* tombol plus */}
-                <TouchableOpacity className='absolute right-2 bottom-2'
-                onPress={() => {navigation.navigate('Tambah Resep')}}
-                >
-                    <Shadow distance={2} className='bg-blue-500 w-10 h-10 rounded-full flex justify-center items-center'>
-                        <SvgXml xml={SvgPlus} width={'100%'} height={'100%'} />
-                    </Shadow>
-                </TouchableOpacity>
+            {/* tombol plus */}
+            <TouchableOpacity className='absolute right-2 bottom-2'
+            onPress={() => {navigation.navigate('Tambah Resep')}}
+            >
+                <Shadow distance={2} className='bg-blue-500 w-10 h-10 rounded-full flex justify-center items-center'>
+                    <SvgXml xml={SvgPlus} width={'100%'} height={'100%'} />
+                </Shadow>
+            </TouchableOpacity>
         </SafeAreaView>
     )
 }

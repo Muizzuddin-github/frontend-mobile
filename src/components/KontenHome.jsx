@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Shadow } from 'react-native-shadow-2';
-import { TouchableHighlight, View, Image, Text, Button, TouchableOpacity } from 'react-native';
+import { TouchableHighlight, View, Image, Text, TouchableOpacity, Alert } from 'react-native';
 import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
 
@@ -66,11 +66,19 @@ const KontenHome = () => {
 
 
     const handleDelete = async (id) => {
-        const response = await axios.delete(`https://backend-project-mobile.vercel.app/resep/${id}`);
+        const delResAlert = () => {
+            Alert.alert('Info', 'Data berhasil dihapus!', [
+                {
+                    text : 'OK',
+                    onPress : () => {navigation.replace("Main")}
+                }
+            ])
+        }
 
-        if(response.data.status == 'OK'){
-            alert("Data berhasil dihapus");
-        } else{
+        try{
+            await axios.delete(`https://backend-project-mobile.vercel.app/resep/${id}`);
+            delResAlert();
+        }catch(err){
             alert(`Terjadi Kesalahan! \n error : ${response.data.message}`);
         }
     }
