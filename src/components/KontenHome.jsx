@@ -58,6 +58,13 @@ const KontenHome = () => {
         }
     };
 
+    const handleEdit = (idx) =>{
+        navigation.navigate('Edit Resep',{
+            editResep : dataResep[idx]
+        })
+    }
+
+
     const handleDelete = async (id) => {
         const response = await axios.delete(`https://backend-project-mobile.vercel.app/resep/${id}`);
 
@@ -97,7 +104,7 @@ const KontenHome = () => {
                         </TouchableHighlight>
                         <View className={`menu bg-white px-5 ${isShow[idx]? '' : 'hidden'} rounded-b-md`}>
                             <View className='my-2'>
-                                <TouchableOpacity className="bg-amber-500 p-2 rounded-md">
+                                <TouchableOpacity onPress={()=>handleEdit(idx)} className="bg-amber-500 p-2 rounded-md">
                                     <Text className="text-center text-white text-base font-semibold">
                                         EDIT
                                     </Text>
