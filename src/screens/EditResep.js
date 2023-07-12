@@ -94,7 +94,12 @@ const EditResep = ({ route, navigation }) => {
         }
       );
       console.log(foto);
-      Alert.alert(`Resep ${judul} Berhasil Dirubah`);
+      Alert.alert('',`Resep ${judul} Berhasil Dirubah`, [
+        {
+          text : 'OK',
+          onPress : () => {navigation.replace("Main")}
+        }
+      ]);
     } catch (error) {
       console.log(error.message);
     }

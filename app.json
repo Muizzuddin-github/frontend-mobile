@@ -21,20 +21,30 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.berbagi.resep"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },"plugins": [
+    },
+    "plugins": [
       [
         "expo-image-picker",
         {
-        "photosPermission": "custom photos permission",
-        "cameraPermission": "Allow $(PRODUCT_NAME) to open the camera",
-        "WRITE_EXTERNAL_STORAGE":"Allow $(PRODUCT_NAME) to open file",
-        "Allow $(PRODUCT_NAME) to open the camera":"Allow $(PRODUCT_NAME) to open file"
+          "photosPermission": "custom photos permission",
+          "cameraPermission": "Allow $(PRODUCT_NAME) to open the camera",
+          "WRITE_EXTERNAL_STORAGE": "Allow $(PRODUCT_NAME) to open file",
+          "Allow $(PRODUCT_NAME) to open the camera": "Allow $(PRODUCT_NAME) to open file"
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "7d79bcf2-c2e7-49f0-b8f9-0a197e882eb6"
+      }
+    }
   }
 }

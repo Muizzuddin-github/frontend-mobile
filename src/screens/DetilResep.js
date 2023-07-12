@@ -1,13 +1,24 @@
-import { useLayoutEffect, useState } from "react";
-import { Text, SafeAreaView, View, Image, FlatList, ScrollView } from "react-native";
+import { useEffect, useLayoutEffect, useState } from "react";
+import {
+  Text,
+  SafeAreaView,
+  View,
+  Image,
+  FlatList,
+  ScrollView,
+} from "react-native";
+import { LogBox } from "react-native";
 
-const DetilResep = ({ route,navigation }) => {
-
+const DetilResep = ({ route, navigation }) => {
   const selectedResep = route.params.selectedResep;
+
+  useEffect(() => {
+    LogBox.ignoreAllLogs();
+  }, []);
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      title : selectedResep.judul
+      title: selectedResep.judul,
     });
   });
 
